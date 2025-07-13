@@ -7,7 +7,7 @@
 
 body {
    color: var(--stone-600);
-   font-family: "Outfit";
+   font-family: "Outfit", Arial, Helvetica, sans-serif;
    background-color: var(--rose-150);
 }
 
@@ -73,11 +73,10 @@ main {
 }
 
 .recipe-card__title {
-   margin-top: var(--spacing-md-2);
-   margin-bottom: var(--spacing-sm);
+   margin-block: var(--spacing-md-2);
 
    color: var(--stone-900);
-   font-family: "Young Serif";
+   font-family: "Young Serif", Arial, Helvetica, sans-serif;
    font-size: 2em;
    font-weight: 400;
 }
@@ -99,18 +98,15 @@ main {
 /*** Content List ***/
 .content-list:not(:last-child) {
    padding-bottom: var(--spacing-md-2);
+   border-bottom: 1px solid var(--stone-150);
 }
 
 .content-list__title {
    margin-block: var(--spacing-md-2);
 
-   font-family: "Young Serif";
+   font-family: "Young Serif", Arial, Helvetica, sans-serif;
    font-size: 1.7em;
    font-weight: 400;
-}
-
-.content-list:not(:last-child) {
-   border-bottom: 1px solid var(--stone-150);
 }
 
 .content-list__title,
@@ -181,12 +177,12 @@ ul li::before {
 
 @media screen and (max-width: 685px) {
    main {
-      padding: 0;
+      padding: 0px;
    }
 
    .recipe-card {
-      border-radius: 0;
-      padding: 0;
+      border-radius: 0px;
+      padding: 0px;
    }
 
    .recipe-card__header > *:not(:first-child),
