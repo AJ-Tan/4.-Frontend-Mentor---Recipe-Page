@@ -57,7 +57,7 @@ main {
    justify-self: center;
 
    border-radius: 1.5rem;
-   padding: var(--spacing-md-2);
+   padding: var(--spacing-md-1);
    width: clamp(300px, 100%, 42rem);
 
    background-color: var(--white);
@@ -86,7 +86,7 @@ main {
 .sub-list {
    border-radius: 0.5rem;
    margin-top: var(--spacing-lg);
-   padding: var(--spacing-md-1);
+   padding: var(--spacing-md-1) var(--spacing-lg);
 
    background-color: var(--rose-50);
 }
