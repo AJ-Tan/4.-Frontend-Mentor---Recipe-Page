@@ -1,0 +1,200 @@
+/**** Base Styles ****/
+* {
+   box-sizing: 0;
+   margin: 0;
+   padding: 0;
+}
+
+body {
+   color: var(--stone-600);
+   font-family: "Outfit";
+   background-color: var(--rose-150);
+}
+
+ul,
+ol {
+   list-style-type: none;
+}
+
+:is(ul, ol) li {
+   margin: var(--spacing-xs) 2.2em;
+}
+
+/**** Variables ****/
+:root {
+   font-size: 16px;
+
+   --white: hsl(0, 0%, 100%);
+   --stone-100: hsl(30, 54%, 90%);
+   --stone-150: hsl(30, 18%, 87%);
+   --stone-600: hsl(30, 10%, 34%);
+   --stone-900: hsl(24, 5%, 18%);
+   --brown-800: hsl(14, 45%, 36%);
+   --rose-800: hsl(332, 51%, 32%);
+   --rose-50: hsl(330, 100%, 98%);
+   --rose-150: hsl(331, 83%, 93%);
+
+   --spacing-xs: 0.5rem;
+   --spacing-sm: 0.75rem;
+   --spacing-md-1: 1rem;
+   --spacing-md-2: 1.5rem;
+   --spacing-lg: 2rem;
+   --spacing-xl: 4rem;
+}
+
+/**** Layout ****/
+main {
+   display: grid;
+   grid-template-columns: 1fr;
+
+   padding: var(--spacing-xl) var(--spacing-md-2);
+}
+
+/**** Components ****/
+/*** Recipe-Card ***/
+.recipe-card {
+   container-type: inline-size;
+   justify-self: center;
+
+   border-radius: 1.5rem;
+   padding: var(--spacing-md-2);
+   width: clamp(300px, 100%, 42rem);
+
+   background-color: var(--white);
+}
+
+.recipe-card > * {
+   font-size: clamp(15px, 2.38cqw, 16px);
+}
+
+.recipe-card__image {
+   border-radius: 0.5rem;
+   max-width: 100%;
+}
+
+.recipe-card__title {
+   margin-top: var(--spacing-md-2);
+   margin-bottom: var(--spacing-sm);
+
+   color: var(--stone-900);
+   font-family: "Young Serif";
+   font-size: 2em;
+   font-weight: 400;
+}
+
+/*** Sub List ***/
+.sub-list {
+   border-radius: 0.5rem;
+   margin-top: var(--spacing-lg);
+   padding: var(--spacing-md-1);
+
+   background-color: var(--rose-50);
+}
+
+.sub-list__title,
+.sub-list__item::before {
+   color: var(--rose-800);
+}
+
+/*** Content List ***/
+.content-list:not(:last-child) {
+   padding-bottom: var(--spacing-md-2);
+}
+
+.content-list__title {
+   margin-block: var(--spacing-md-2);
+
+   font-family: "Young Serif";
+   font-size: 1.7em;
+   font-weight: 400;
+}
+
+.content-list:not(:last-child) {
+   border-bottom: 1px solid var(--stone-150);
+}
+
+.content-list__title,
+.content-list__item::before {
+   color: var(--brown-800);
+}
+
+.content-list__table {
+   border-collapse: collapse;
+   margin-top: var(--spacing-sm);
+   width: 100%;
+
+   text-align: left;
+
+   tr {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      padding: var(--spacing-md-1) var(--spacing-lg);
+   }
+
+   tr:not(:last-child) {
+      border-bottom: 1px solid var(--stone-100);
+   }
+
+   th {
+      font-weight: 400;
+   }
+
+   td {
+      color: var(--brown-800);
+   }
+}
+
+/**** Utilities ****/
+
+/*** Custom Marker ***/
+:is(ul, ol) li {
+   position: relative;
+   counter-increment: item; /** For Ordered List Marker **/
+}
+
+ol li::before {
+   content: counter(item) ".";
+
+   position: absolute;
+   left: calc(2em * -1);
+   top: 0;
+
+   font-weight: 600;
+   font-size: 1eem;
+}
+
+ul li::before {
+   content: "•";
+
+   position: absolute;
+   left: calc(2em * -1);
+   top: 50%;
+
+   font-size: 1em;
+
+   transform: translateY(-50%);
+}
+/*** Custom Marker ***/
+
+/**** Media Queries ****/
+
+@media screen and (max-width: 685px) {
+   main {
+      padding: 0;
+   }
+
+   .recipe-card {
+      border-radius: 0;
+      padding: 0;
+   }
+
+   .recipe-card__header > *:not(:first-child),
+   .content-list {
+      margin-inline: var(--spacing-lg);
+   }
+
+   .content-list:last-child {
+      padding-bottom: var(--spacing-md-2);
+   }
+}
