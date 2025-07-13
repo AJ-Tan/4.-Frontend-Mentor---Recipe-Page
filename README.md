@@ -270,3 +270,5 @@ In summary:
 
 Frontend Mentor:
 [@mustafasen97](https://www.frontendmentor.io/profile/mustafasen97) - I would like to thank Mr. Mustafa for giving me constructive guidance on how I can manage and organize my CSS in a solution I submitted in Frontend Mentor (Social Links Profile). I applied his suggestion, and I can see that my CSS looks a lot more cleaner, organized and easy to maintain. Though I probably didn't properly applied everything, but I will make continuous improvement down the line. Thank you!
+
+[@Esabdul](https://www.frontendmentor.io/profile/Esabdul) - I would also like to thank Mr Abdul for pointing out the issues in my html file. I really appreciate these kinds of feedback, because it will really help me in the long run. Thank you!
